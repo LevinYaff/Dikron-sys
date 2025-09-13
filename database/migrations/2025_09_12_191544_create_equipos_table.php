@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('equipos', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre', 2)->unique(); // 'AJ', 'BF', 'CI', 'DG', 'EH', 'KL'
+            $table->date('fecha_inicio_ciclo'); // Referencia fija: 2025-08-03
+            $table->boolean('activo')->default(true);
             $table->timestamps();
         });
     }
